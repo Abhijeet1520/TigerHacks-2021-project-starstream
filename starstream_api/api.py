@@ -14,7 +14,11 @@ hygdf_blob = hygdf_blob.download_as_string()
 hygdf_blob = hygdf_blob.decode('utf-8')
 hygdf_blob = StringIO(hygdf_blob)  #tranform bytes to string here
 
-df = pd.read_csv(hygdf_blob)
+
+def check_request_params(request, param):
+    if (request.args and param in request.args) or (request.get_json() and param in request.get_json()):
+        return request.args.get(param) or request.get_json().get(param)
+    return None
 
 def return_data(request):
     """Responds to any HTTP request.
@@ -25,4 +29,17 @@ def return_data(request):
         Response object using
         `make_response <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>`.
     """
-    return df.to_json()
+
+    df = pd.read_csv(hygdf_blob)
+    if sort_by := check_request_params(request, 'sort_by'):
+        if ascending := check_request_params(request, 'ascending'):
+            df = df.sort_values(by=sort_by, ascending=bool(ascending))
+        else:
+            df = df.sort_values(by=sort_by, ascending=False)
+    if count := check_request_params(request, 'count'):
+        df = df.iloc[:int(count)]
+
+    if check_request_params(request, 'csv'):
+        return df.to_csv()
+    else:
+        return df.to_json()
