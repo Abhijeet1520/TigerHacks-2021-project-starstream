@@ -4,8 +4,8 @@ import StarfieldAnimation from 'react-starfield-animation'
 
 import background from './stars.jpg'
 
-export default class Galaxy extends Component {
-  render () {
+const Galaxy = () => {
+  // render () {
     return (
       <div
         style={{
@@ -31,5 +31,7 @@ export default class Galaxy extends Component {
         />
       </div>
     )
-  }
+  // }
 }
+
+export default Galaxy
