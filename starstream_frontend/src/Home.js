@@ -54,12 +54,6 @@ const Home = () => {
           </div>
         </section>
         <h3></h3>
-        <h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste qui
-          voluptas quae maiores quidem! Enim rerum voluptas, doloribus sed,
-          veniam culpa quasi at facere suscipit asperiores quae, deleniti dicta
-          rem.
-        </h3>
       </section>
       <script src="script.js"></script>
     </div>
