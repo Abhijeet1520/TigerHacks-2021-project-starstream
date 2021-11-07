@@ -8,7 +8,7 @@ function Navbar({ handleLogout }) {
 
     return (
         <>
-            <nav className='navbar'>
+            <nav className='navbar' style={{zIndex:"10000",height:"10vh"}}>
                 <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
                 StarStream
                 </Link>

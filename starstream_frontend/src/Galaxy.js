@@ -11,7 +11,9 @@ const Galaxy = () => {
         style={{
           background: `url(${background})`,
           backgroundSize: 'stretch',
-          minHeight: '100vh',
+          zIndex: 0,
+          minHeight: '90vh',
+          position: 'relative',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center'
