@@ -11,13 +11,13 @@ Hence, we wished to create an application where anyone can see all the shining s
 
 ![Alt Text](https://media.giphy.com/media/l3E6IlIx5f9nVjd84/giphy.gif)
 
-<hr/><br/>
+<hr/>
 
 ## 💻 What it does
 
 It's a 3D environment where a user can see all the stars revolving around the earth in real-time. It also gives out more information about stars like their name, distance from earth, star's ID in the Henry Draper, star's ID in the Harvard Revised.
 
-<hr/><br/>
+<hr/>
 
 ## 🔨 How we built it
 
@@ -64,7 +64,7 @@ This would return first 10 stars sorted by id in descending order and in csv for
 
 We then use three.js to show the stars in a first person view with the data from the API
 
-<hr/><br/>
+<hr/>
 
 ## ⛅ Use of Google Cloud
 
@@ -73,26 +73,26 @@ We then use three.js to show the stars in a first person view with the data from
 - Cloud function to convert that csv data to json and to transform the data on the basis of parameters passed to the API gateway
 - API Gateway to secure and monitor our API gateways
 
-<hr/><br/>
+<hr/>
 
 ## 🧠 Challenges we ran into
 
 The biggest challenge was to render the 3D model as none of our team member has worked with three js before.
 But we tacked this problem by going through tutorials and documentations and by taking help and advices from the mentors.
 
-<hr/><br/>
+<hr/>
 
 ## 🏅 Accomplishments that we're proud of
 
 Creating and publishing a live interactive site using three.js and creating a working API using Google Cloud Platform and also completing the project under the given time frame.
 
-<hr/><br/>
+<hr/>
 
 ## 📖 What we learned
 
 Working with three js and using google cloud services like Cloud storage, Cloud functions and API gateway.
 
-<hr/><br/>
+<hr/>
 
 ## 🚀 What's next for Star Stream
 
