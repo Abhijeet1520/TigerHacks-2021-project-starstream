@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 // import { Environment, OrbitControls } from "@react-three/drei";
 import Star from "./star";
@@ -8,11 +8,11 @@ import "./styles.css";
 function App() {
 
   const [state, setState] = useState([])
-  useEffect(() => {
-    fetch("https://starstream-api-gateway-b2dzz7qh.uc.gateway.dev/min-data").then(
-      res => setState(res.data)
-    )
-  }, [])
+  // useEffect(() => {
+  //   fetch("https://starstream-api-gateway-b2dzz7qh.uc.gateway.dev/min-data").then(
+  //     res => setState(res.data)
+  //   )
+  // }, [])
 
   return (
     <div className="app">
