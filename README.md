@@ -11,15 +11,60 @@ Hence, we wished to create an application where anyone can see all the shining s
 
 ![Alt Text](https://media.giphy.com/media/l3E6IlIx5f9nVjd84/giphy.gif)
 
+<hr/><br/>
+
 ## 💻 What it does
 
 It's a 3D environment where a user can see all the stars revolving around the earth in real-time. It also gives out more information about stars like their name, distance from earth, star's ID in the Henry Draper, star's ID in the Harvard Revised.
+
+<hr/><br/>
 
 ## 🔨 How we built it
 
 We built the frontend using react.js and three.js.
 The backend API is created by using Google cloud services like cloud function, cloud storage and API-gateway.
 We are using the stars data from astronexus.com/hyg
+
+### StarStream API
+
+This API provides data from [astronexus.com/hyg](astronexus.com/hyg)
+
+API endpoint: [https://starstream-api-gateway-b2dzz7qh.uc.gateway.dev/min-data](https://starstream-api-gateway-b2dzz7qh.uc.gateway.dev/min-data)
+
+- this data is stored in Google Cloud Storage
+- then cloud function reads that data and apply transformation on the data
+- Cloud function's open API endpoint is then passed to GCP API Gateway tool to secure that connection and to easily update the API endpoints by using config files
+
+### API parameters
+
+Following parameters are available for the API
+
+- count -> Integer
+  - Number of star's data returned
+
+- sort_by -> String
+  - Sort the data by any specific field
+  - the current available fields are
+    -['hd', 'hr', 'proper', 'dist', 'mag', 'absmag', 'x', 'y', 'z']
+
+- ascending -> Boolean
+  - Set if the sort_by should be ascending or descending
+  - 1 for ascending and 0 for descending
+
+- csv -> Boolean
+  - Change the output format from json to csv
+
+### Example
+
+[[gateway]/min-data?count=10&sort_by=id&ascending=0&csv=1](https://starstream-api-gateway-b2dzz7qh.uc.gateway.dev/min-data?count=10&sort_by=id&ascending=0&csv=1)
+
+This would return first 10 stars sorted by id in descending order and in csv format
+
+### FrontEnd
+
+We then use three.js to show the stars in a first person view with the data from the API
+
+<hr/><br/>
 
 ## ⛅ Use of Google Cloud
 
@@ -28,18 +73,26 @@ We are using the stars data from astronexus.com/hyg
 - Cloud function to convert that csv data to json and to transform the data on the basis of parameters passed to the API gateway
 - API Gateway to secure and monitor our API gateways
 
+<hr/><br/>
+
 ## 🧠 Challenges we ran into
 
 The biggest challenge was to render the 3D model as none of our team member has worked with three js before.
 But we tacked this problem by going through tutorials and documentations and by taking help and advices from the mentors.
 
+<hr/><br/>
+
 ## 🏅 Accomplishments that we're proud of
 
 Creating and publishing a live interactive site using three.js and creating a working API using Google Cloud Platform and also completing the project under the given time frame.
 
+<hr/><br/>
+
 ## 📖 What we learned
 
 Working with three js and using google cloud services like Cloud storage, Cloud functions and API gateway.
+
+<hr/><br/>
 
 ## 🚀 What's next for Star Stream
 
