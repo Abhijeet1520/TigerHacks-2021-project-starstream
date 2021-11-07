@@ -1,15 +1,16 @@
 import Home from "./Home";
 import Galaxy from "./Galaxy";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+// import createHistory from "history/createBrowserHistory" 
 import "./styles.css";
 
 function App() {
 
   return (
-    <Router>
+    <Router >
       <Switch>
-        <Route exact path="/" element={Home} />
-        <Route exact path="/galaxy" element={Galaxy} />
+        <Route exact path="/" component={Home} />
+        <Route path="/galaxy" component={Galaxy} />
       </Switch>
     </Router>
   );
