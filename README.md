@@ -1,6 +1,7 @@
 # Star Stream
 
-![Alt Text](https://media.giphy.com/media/tIwmTQ64D52XTuL8xd/giphy.gif)
+![Alt Text](https://media.giphy.com/media/5OaDrNrPGWJ9R1h7mf/giphy.gif)
+
 
 ## 💡 Inspiration
 
@@ -105,4 +106,4 @@ Working with three js and using google cloud services like Cloud storage, Cloud 
 
 And a lot of other features!
 
-![Alt Text](https://media.giphy.com/media/5OaDrNrPGWJ9R1h7mf/giphy.gif)
+![Alt Text](https://media.giphy.com/media/tIwmTQ64D52XTuL8xd/giphy.gif)
