@@ -1,0 +1,32 @@
+# starstream-api-function.yaml
+swagger: '2.0'
+info:
+  title: starstream-api
+  description: API to get data of stars
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /min-data:
+    get:
+      summary: Get minimized dataset data
+      operationId: min-data
+      x-google-backend:
+        address: https://us-central1-starstream-331322.cloudfunctions.net/starstream
+      responses:
+        '200':
+          'description': 'Success'
+          'schema':
+            type: string
+      securityDefinitions:
+        auth0_jwk:
+          authorizationUrl: ""
+          flow: "implicit"
+          type: "oauth2"
+          # Replace YOUR-ACCOUNT-NAME with your Auth0 account name.
+          x-google-issuer: "https://YOUR-ACCOUNT-NAME.auth0.com/"
+          x-google-jwks_uri: "https://YOUR-ACCOUNT-NAME.auth0.com/.well-known/jwks.json"
+          # Optional. Replace YOUR-CLIENT-ID with your client ID
+          x-google-audiences: "YOUR-CLIENT-ID"
