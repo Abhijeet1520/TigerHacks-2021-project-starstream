@@ -1,33 +1,36 @@
-import { Suspense, useState, useEffect } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls } from "@react-three/drei";
-import Star from "./star";
-import "./styles.css";
+import React, { Component } from 'react'
 
-function Galaxy() {
-  const [state, setState] = useState([]);
-  useEffect(() => {
-    fetch(
-      "https://starstream-api-gateway-b2dzz7qh.uc.gateway.dev/min-data"
-    ).then((res) => setState(res.data));
-  }, []);
+import StarfieldAnimation from 'react-starfield-animation'
 
-  return (
-    <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
-      <ambientLight intensity={4} />
-      <spotLight
-        intensity={0.5}
-        angle={0.1}
-        penumbra={1}
-        position={[10, 15, 10]}
-        castShadow
-      />
-      <Suspense fallback={null}>
-        <Star />
-      </Suspense>
-      <OrbitControls autoRotate />
-    </Canvas>
-  );
+import background from './stars.jpg'
+
+export default class App extends Component {
+  render () {
+    return (
+      <div
+        style={{
+          background: `url(${background})`,
+          backgroundSize: 'stretch',
+          minHeight: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+      
+
+        <StarfieldAnimation
+          numParticles={400}
+          style={{
+            position: 'absolute',
+            zIndex: 1,
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0
+          }}
+        />
+      </div>
+    )
+  }
 }
-
-export default Galaxy;
