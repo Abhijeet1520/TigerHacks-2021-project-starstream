@@ -1,0 +1,22 @@
+# starstream-api-function.yaml
+swagger: '2.0'
+info:
+  title: starstream-api
+  description: API to get data of stars
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /min-data:
+    get:
+      summary: Get minimized dataset data
+      operationId: min-data
+      x-google-backend:
+        address: https://us-central1-starstream-331322.cloudfunctions.net/starstream
+      responses:
+        '200':
+          'description': 'Success'
+          'schema':
+            type: string
