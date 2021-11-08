@@ -3,7 +3,7 @@ import Galaxy from "./Galaxy";
 import Stream from "./Stream";
 import Navbar from "./Navbar";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-// import createHistory from "history/createBrowserHistory"
+
 import "./styles.css";
 
 function App() {
