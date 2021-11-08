@@ -16,7 +16,7 @@ function Stream() {
 //   }, []);
 
   return (
-    <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
+    <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }} style={{backgroundColor:"black",height:"90vh"}}>
       <ambientLight intensity={4} />
       <spotLight
         intensity={0.5}
